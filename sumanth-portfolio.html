@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sathala Sumanth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b27;
+            --bg-nav: #0b0f1a;
+            --blue-accent: #4da3ff;
+            --blue-glow: rgba(77, 163, 255, 0.4);
+            --text-white: #e8eaf0;
+            --text-muted: #9aa0b0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        header {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-nav);
+            padding: 18px 60px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(77, 163, 255, 0.15);
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 26px;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 45px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 16px;
+            color: var(--text-muted);
+            transition: color 0.3s;
+            text-transform: lowercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            color: var(--blue-accent);
+        }
+
+        /* ===== HOME SECTION ===== */
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 100px;
+            min-height: 90vh;
+            background-color: var(--bg-dark);
+        }
+
+        .home-text {
+            max-width: 55%;
+        }
+
+        .home-text h3 {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .home-text h1 {
+            font-size: 58px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+
+        .home-text h2 {
+            font-size: 26px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .home-text h2 span {
+            color: var(--blue-accent);
+        }
+
+        .home-text p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 560px;
+            margin-bottom: 30px;
+        }
+
+        /* Social icons */
+        .social-icons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 2px solid var(--blue-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-accent);
+            font-size: 17px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--blue-accent);
+            color: white;
+            box-shadow: 0 0 14px var(--blue-glow);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 13px 32px;
+            background: var(--blue-accent);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 0 20px var(--blue-glow);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #2a8ef5;
+            box-shadow: 0 0 30px rgba(77, 163, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Home image */
+        .home-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-img img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--blue-accent);
+            box-shadow: 0 0 30px var(--blue-glow);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            padding: 80px 100px;
+            background-color: #0b0f1a;
+        }
+
+        .about-img img {
+            width: 320px;
+            height: 360px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid var(--blue-accent);
+            box-shadow: 0 0 30px var(--blue-glow);
+        }
+
+        .about-text h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .about-text h1 span {
+            color: var(--blue-accent);
+        }
+
+        .about-text h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.9;
+            max-width: 500px;
+            margin-bottom: 28px;
+        }
+
+        /* ===== SKILLS SECTION ===== */
+        .skills {
+            padding: 80px 100px;
+            background-color: var(--bg-dark);
+        }
+
+        .skills h1 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .skills h1 span {
+            color: var(--blue-accent);
+        }
+
+        .skill-content {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .bars h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-white);
+        }
+
+        .light-bar {
+            width: 100%;
+            height: 10px;
+            background: #1e2535;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .btn-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #2a6aff, var(--blue-accent));
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(77, 163, 255, 0.5);
+            transition: width 1s ease;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 80px 100px;
+            background-color: #0b0f1a;
+        }
+
+        .services h1 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .services h1 span {
+            color: var(--blue-accent);
+        }
+
+        .service-content {
+            display: flex;
+            gap: 28px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .service-box {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 40px 30px;
+            width: 280px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(77, 163, 255, 0.1);
+        }
+
+        .service-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--blue-accent);
+            box-shadow: 0 10px 30px var(--blue-glow);
+        }
+
+        .service-box .icon {
+            font-size: 48px;
+            color: var(--blue-accent);
+            margin-bottom: 20px;
+        }
+
+        .service-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 14px;
+        }
+
+        .service-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: 80px 100px;
+            background-color: var(--bg-dark);
+            text-align: center;
+        }
+
+        .contact h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .contact h1 span {
+            color: var(--blue-accent);
+        }
+
+        .contact p {
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            font-size: 15px;
+        }
+
+        .contact-form {
+            max-width: 580px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: var(--bg-card);
+            border: 1px solid rgba(77, 163, 255, 0.2);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 15px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--blue-accent);
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-nav);
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid rgba(77, 163, 255, 0.1);
+        }
+
+        footer span {
+            color: var(--blue-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo"><a href="#">Portfolio</a></div>
+        <nav>
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#services">services</a>
+            <a href="#skills">skills</a>
+            <a href="#contact">contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h3>hi myself</h3>
+            <h1>Sathala Sumanth</h1>
+            <h2>And <span>I am a frontend developer</span></h2>
+            <p>I am a passionate frontend developer dedicated to creating intuitive and visually appealing user interfaces. I specialize in building responsive, accessible, and high-performance web applications.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="vyshu.jpg" alt="Profile Photo">
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="vyshu.jpg" alt="About Photo">
+        </div>
+        <div class="about-text">
+            <h1>About <span>Me</span></h1>
+            <h3>Frontend Developer</h3>
+            <p>With a strong foundation in modern web technologies, I love translating complex problems into simple, beautiful, and elegant designs. My goal is to always build applications that are scalable and efficient under the hood while providing engaging, pixel-perfect user experiences.</p>
+            <a href="#" class="btn">Read more</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h1>My <span>Services</span></h1>
+        <div class="service-content">
+            <div class="service-box">
+                <div class="icon"><i class="fas fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Building responsive and interactive websites using modern HTML, CSS, and frameworks like React to deliver exceptional digital experiences across all devices.</p>
+                <a href="#" class="btn">Readmore</a>
+            </div>
+            <div class="service-box">
+                <div class="icon"><i class="fas fa-database"></i></div>
+                <h3>Database Development</h3>
+                <p>Designing robust data architectures and managing both SQL and NoSQL databases to ensure fast, secure, and reliable data storage and retrieval.</p>
+                <a href="#" class="btn">Readmore</a>
+            </div>
+            <div class="service-box">
+                <div class="icon"><i class="fab fa-python"></i></div>
+                <h3>Python Development</h3>
+                <p>Developing scalable backend processes, automating workflows, and building robust APIs using Python to power complex web applications.</p>
+                <a href="#" class="btn">Readmore</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+        <h1>My <span>Skills</span></h1>
+        <div class="skill-content">
+            <div class="bars">
+                <h3>HTML — 90%</h3>
+                <div class="light-bar"><div class="btn-bar" style="width:90%"></div></div>
+            </div>
+            <div class="bars">
+                <h3>CSS — 80%</h3>
+                <div class="light-bar"><div class="btn-bar" style="width:80%"></div></div>
+            </div>
+            <div class="bars">
+                <h3>JavaScript — 70%</h3>
+                <div class="light-bar"><div class="btn-bar" style="width:70%"></div></div>
+            </div>
+            <div class="bars">
+                <h3>React — 60%</h3>
+                <div class="light-bar"><div class="btn-bar" style="width:60%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h1>Contact <span>Me</span></h1>
+        <p>Feel free to reach out — I'd love to hear from you!</p>
+        <div class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button class="btn">Send Message</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 <span>Sathala Sumanth</span> — All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
